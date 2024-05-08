@@ -10,7 +10,7 @@ But once you get more comfortable and start automating tasks etc. you will proba
 That said. There are tools out there, that can make the CLI a bit less painfull. 
 But more on that, later in this module.
 
-To run any command, you star by running
+To see what `kubectl` can do, we start by running
 ```execute
 kubectl
 ```
@@ -85,8 +85,107 @@ Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
 ```
 
-Letøs start by deploying a simple Pod onto the cluster, by running
-```eecute
+Let's start by deploying a simple Pod onto the cluster, by running
+```execute
 kubectl apply -f pod.yaml
 ```
 
+The output should be
+```
+pod/nginx created
+```
+
+To see the pod you just created run
+```execute
+kubectl get pods
+```
+
+The output should be
+```
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          76s
+```
+
+---
+**Talk in class about**
+
+- Name
+- Ready
+- Status
+- Restarts
+- Age
+---
+
+We have just deployed a `pod`
+
+But what is that exactly ?
+
+Kubectl can help us with that, by running
+```execute
+kubectl explain pod
+```
+
+The outpout should be
+```
+KIND:       Pod
+VERSION:    v1
+
+DESCRIPTION:
+    Pod is a collection of containers that can run on a host. This resource is
+    created by clients and scheduled onto hosts.
+    
+FIELDS:
+  apiVersion    <string>
+    APIVersion defines the versioned schema of this representation of an object.
+    Servers should convert recognized schemas to the latest internal value, and
+    may reject unrecognized values. More info:
+    https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+
+  kind  <string>
+    Kind is a string value representing the REST resource this object
+    represents. Servers may infer this from the endpoint the client submits
+    requests to. Cannot be updated. In CamelCase. More info:
+    https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+
+  metadata      <ObjectMeta>
+    Standard object's metadata. More info:
+    https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+
+  spec  <PodSpec>
+    Specification of the desired behavior of the pod. More info:
+    https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+
+  status        <PodStatus>
+    Most recently observed status of the pod. This data may not be up to date.
+    Populated by the system. Read-only. More info:
+    https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+```
+
+While it is possible to create a pod (and other kubernetes objects) as a one liner, using `kubectl`, the most common way, is by describing them in one or more yaml files.
+
+Let's open the pod.yaml file, that created the pod, and see what it looks like
+```editor:open-file
+title: Open pod.yaml
+file: ~/exercises/pod.yaml
+```
+![pod.yaml](1.png)
+
+---
+**Talk in class about**
+- apiversion
+- kind
+- metadata
+- name
+- image
+- ports
+---
+
+Let's cleanup our `pod` before we continue to the next step, by running
+```execute
+kubectl delete -f pod.yaml
+```
+
+You should get a confirmation that it is deleted 
+```
+pod "nginx" deleted
+```
