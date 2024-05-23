@@ -28,7 +28,7 @@ spec:
       editor:
         enabled: true
       console:
-        enabled: false
+        enabled: true
       docker:
         enabled: true
       registry:
@@ -37,8 +37,12 @@ spec:
         enabled: true
     ingresses:
     - name: application
-      port: 80
+      protocol: http
+      #host: nginx-deployment.$(session_namespace).svc.$(cluster_domain)
+      port: 8080
     dashboards:
     - name: App
       url: "$(ingress_protocol)://application-$(session_name).$(ingress_domain)/"
+    #- name: App
+    #  url: "$(ingress_protocol)://application-$(session_name).$(ingress_domain)/"
 

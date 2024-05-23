@@ -109,6 +109,11 @@ root@nginx:/#
 ```
 
 And you can now run `ls` and get the same info as before
+
+```execute
+ls
+```
+
 ```
 bin   dev                  docker-entrypoint.sh  home  media  opt   product_uuid  run   srv  tmp  var
 boot  docker-entrypoint.d  etc                   lib   mnt    proc  root          sbin  sys  usr
@@ -119,6 +124,11 @@ When you are done, simply run
 exit
 ```
 to exit the container.
+
+Remove the pod again, to prepare for next step.
+```execute
+kubectl delete -f pod.yaml
+```
 
 Note that if you make changes to the container, and it's redeployed etc. then you will loose all changes, that is not persistant.
 
