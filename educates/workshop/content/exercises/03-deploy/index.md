@@ -9,7 +9,29 @@ Let's open a deployment.yaml file, and see what it looks like
 title: Open deployment.yaml
 file: ~/exercises/deployment.yaml
 ```
-![Deployment](1.png)
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+```
 
 One of the big differences between pods and deployments, is that a deployment can have multiple pods.
 

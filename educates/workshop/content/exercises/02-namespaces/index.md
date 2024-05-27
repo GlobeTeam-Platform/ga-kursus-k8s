@@ -1,7 +1,7 @@
 ---
 title: "Namespaces"
 ---
-
+![namespaces](1.jpg)
 Kubernetes has a concept called Namespaces.
 
 It's a logical way of splitting workloads and objects.
