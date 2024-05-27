@@ -15,10 +15,11 @@ spec:
       includePaths:
       - /workshop/**
       - /exercises/**
+      - /templates/**
       - /README.md
   session:
     namespaces:
-      budget: medium
+      budget: high
     applications:
       slides:
         enabled: true
@@ -35,14 +36,14 @@ spec:
         enabled: true
       vcluster:
         enabled: true
-    ingresses:
-    - name: application
-      protocol: http
+    #ingresses:
+    #- name: application
+    #  protocol: http
       #host: nginx-deployment.$(session_namespace).svc.$(cluster_domain)
-      port: 8080
+    #  port: 8080
     dashboards:
-    - name: App
-      url: "$(ingress_protocol)://application-$(session_name).$(ingress_domain)/"
+    - name: Ingress
+      url: "$(ingress_protocol)://nginx-$(session_name).$(ingress_domain)/"
     #- name: App
     #  url: "$(ingress_protocol)://application-$(session_name).$(ingress_domain)/"
 

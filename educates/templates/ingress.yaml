@@ -1,0 +1,21 @@
+#@ load("@ytt:data", "data")
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  rules:
+  - host: #@ "nginx-{SESSION_NAMESPACE}.{INGRESS_DOMAIN}".format(**data.values)
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-deployment
+            port:
+              number: 80

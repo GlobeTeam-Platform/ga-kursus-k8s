@@ -13,5 +13,4 @@ In this workshop you will learn about
 - Tools to use
 - And others
 
-
 ![k8s](k8s.png)
