@@ -16,7 +16,7 @@
       </div>
       <figure class="flex justify-center w-1/2">
         <img
-          src="https://media.licdn.com/dms/image/D4D03AQEmc4oxodLOFg/profile-displayphoto-shrink_200_200/0/1712952355432?e=1720656000&v=beta&t=FQv6cUoKjLa52q8pC9mBMZlAoRH6EnUVWskAu_dfFFk"
+          src="https://gravatar.com/userimage/20740867/33f7d744cdfd18b7401c7e90d20893f4.jpeg?size=256"
           class="bg-gray-400 rounded-full object-cover h-80 w-80 border border-8 border-secondary-400 z-10"
         />
       </figure>
