@@ -3,7 +3,7 @@
     <div class="flex items-center h-full">
       <div class="flex flex-col gap-4 w-1/2">
         <h1 class="text-6xl">Robert Jensen</h1>
-        <span class="mt-4">Cloud Native Consultant</span>
+        <span class="mt-4">DevOps Consultant</span>
         <ul>
           <li>+20 years of professional experience</li>
           <li>Cloud Native Community organizer</li>

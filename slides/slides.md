@@ -3,7 +3,6 @@ theme: ./
 layout: cover
 background: /learn.jpg
 ---
-
 # Kubernetes Workshop
 By Globe Academy
 
@@ -11,61 +10,48 @@ By Globe Academy
 layout: about-me
 ---
 
-
 ---
 layout: image
 
 # the image source
-image: /docker_logo.svg
-backgroundSize: 20em 70%
+image: /Kubernetes-Logo.wine.png
+backgroundSize: 50%
+
 ---
 
-# Docker
+# Kubernetes
 
+Kubernetes, is an open-source platform for managing, automating deployment, scaling, and operating containerized applications across a cluster of worker nodes.
 
 ---
 layout: image
-image: /docker-vs-vm.svg
+image: /kubernetes-cluster-architecture.svg
 backgroundSize: 50em 70%
 ---
 
-# Docker vs VM’s
+# Cluster Architecture
 
 ---
 layout: image
-image: /joe-beda-quote.jpg
-backgroundSize: 50em 70%
+backgroundSize: 80%
 ---
 
-# Definition of a Docker container
+# Pods
+
+- A pod (as in a pod of whales or pea pod) is a group of one or more containers
+- Containers within a pod share an IP address and port space, and can find each other via localhost
+- Containers in a Pod also share the same data volumes
+- Pods are considered to be ephemeral
+![pods](/kubernetes-cluster-elements-pods-beginners.png)
 
 ---
 layout: image
-image: /docker-hub.png
-backgroundSize: 45em 70%
+image: /kubernetes-cluster-network.svg
+backgroundSize: 75%
 ---
 
-# Docker Hub
+# Networking
 
----
-layout: quote
-
----
-
-# Docker HUB – Rate limit
-
-The rate limits of 100 container image requests per six hours for anonymous usage, and 200 container image requests per six hours for free Docker accounts are now in effect. Image requests exceeding these limits will be denied until the six hour window elapses.
-
----
-layout: quote
-
----
-
-# Dockerfile
-
-Docker can build images automatically by reading the instructions from a Dockerfile.
-
-A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image
 
 ---
 layout: image
