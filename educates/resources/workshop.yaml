@@ -19,7 +19,7 @@ spec:
       - /README.md
   session:
     namespaces:
-      budget: high
+      budget: medium
     applications:
       slides:
         enabled: true
